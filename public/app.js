@@ -37,7 +37,7 @@ let latlngs = [
 [48.86834104280146, 2.330308418109664]
 ]
 
-let polygon = L.polygon(latlngs, {color: 'red'}).addTo
+let polygon = L.polygon(latlngs, {color: 'blue'}).addTo
 (myMap);                                 
 myMap.fitBounds(polygon.getBounds());
 
