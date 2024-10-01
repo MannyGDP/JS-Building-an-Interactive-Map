@@ -38,4 +38,12 @@ const gB = L.marker([48.871282159004856, 2.3434818588892714]).bindPopup('<p1><b>
 const stations = L.layerGroup([rS, sSD, sentier, bourse, qS, gB]).addTo(myMap)
 
 // Create red pin marker
-
+let redPin = L.icon ({
+    iconUrl: '/public/assets/red-pin.png',
+    iconSize: [38, 38],
+    shawdowSize: [50, 64],
+    iconAnchor: [19, 38],
+    popupAnchor: [-3, -76]
+    
+})
+// const rS = L.marker([48.866200610611926, 2.352236247419453],{icon: redPin}).bindPopup('RÃ©aumur-SÃ©bastopol')
