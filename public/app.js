@@ -23,27 +23,23 @@ let latlngs = [
 [48.86834104280146, 2.330308418109664]
 ]
 
-let polygon = L.polygon(latlngs, {color: 'blue'}).addTo
-(myMap);                                 
+let polygon = L.polygon(latlngs, {color: 'blue'}).addTo(myMap);                                 
 myMap.fitBounds(polygon.getBounds());
 
+let redPin = L.icon({
+    iconUrl: '/public/assets/red-pin.png',
+    iconSize: [38, 38],
+    iconAnchor: [19, 38]
+})
 // Metro station markers
-const rS = L.marker([48.866200610611926, 2.352236247419453],).bindPopup('<p1><b>Réaumur-Sébastopol</b></p1>')
-const sSD = L.marker([48.869531786321566, 2.3528590208055196]).bindPopup('<p1><b>Strasbourg-Saint-Denis</b></p1>')
-const sentier = L.marker([48.8673721067762, 2.347107922912739]).bindPopup('<p1><b>Sentier</b></p1>')
-const bourse = L.marker([48.86868503971672, 2.3412285142058167]).bindPopup('<p1><b>Bourse</b></p1>')
-const qS = L.marker([48.869560129483226, 2.3358638645569543]).bindPopup('<p1><b>Quatre Septembre</b></p1>')
-const gB = L.marker([48.871282159004856, 2.3434818588892714]).bindPopup('<p1><b>Grands Boulevards</b></p1>')
+const rS = L.marker([48.866200610611926, 2.352236247419453],{icon : redPin}).bindPopup('<p1><b>Réaumur-Sébastopol</b></p1>')
+const sSD = L.marker([48.869531786321566, 2.3528590208055196],{icon : redPin}).bindPopup('<p1><b>Strasbourg-Saint-Denis</b></p1>')
+const sentier = L.marker([48.8673721067762, 2.347107922912739],{icon : redPin}).bindPopup('<p1><b>Sentier</b></p1>')
+const bourse = L.marker([48.86868503971672, 2.3412285142058167],{icon : redPin}).bindPopup('<p1><b>Bourse</b></p1>')
+const qS = L.marker([48.869560129483226, 2.3358638645569543],{icon : redPin}).bindPopup('<p1><b>Quatre Septembre</b></p1>')
+const gB = L.marker([48.871282159004856, 2.3434818588892714],{icon : redPin}).bindPopup('<p1><b>Grands Boulevards</b></p1>')
 
 const stations = L.layerGroup([rS, sSD, sentier, bourse, qS, gB]).addTo(myMap)
 
-// Create red pin marker
-let redPin = L.icon ({
-    iconUrl: '/public/assets/red-pin.png',
-    iconSize: [38, 38],
-    shawdowSize: [50, 64],
-    iconAnchor: [19, 38],
-    popupAnchor: [-3, -76]
-    
-})
 // const rS = L.marker([48.866200610611926, 2.352236247419453],{icon: redPin}).bindPopup('RÃ©aumur-SÃ©bastopol')
+// Create red pin marker
